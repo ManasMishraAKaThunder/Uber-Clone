@@ -56,3 +56,48 @@ the request body should be in JSON format and include the following fields:
 
 - Status: 500 Internal Server Error
   - Returned if the server encounters an error while creating the user
+
+## User Login
+
+### Endpoint
+POST /user/login
+
+### Description
+Authenticates an existing user and returns a JWT token.
+
+### HTTP METHOD
+`POST`
+
+### Request Body
+The request body should be in JSON format and include the following fields:
+
+```json
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+### Required Fields
+- email: required valid email address
+- password: required string
+
+### Success Response
+- Status: 200 OK
+- Response body:
+
+```json
+{
+  "token": "jwt_token"
+}
+```
+
+### Error Responses
+- Status: 400 Bad Request
+  - Returned when validation fails or required fields are missing
+
+- Status: 401 Unauthorized
+  - Returned when the email or password is incorrect
+
+- Status: 500 Internal Server Error
+  - Returned if the server encounters an error while logging in

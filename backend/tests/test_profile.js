@@ -6,7 +6,7 @@ const options = {
   path: '/users/profile',
   method: 'GET',
   headers: {
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTQ5ZmMxYjAyNTZmYWNmMjRmODA4MGIiLCJpYXQiOjE3ODMyNTY1NTcsImV4cCI6MTc4MzI2MDE1N30.nOVRRZ5rFAJckrjLAyCCtYKgNAnmiFEFeAZY-_XMqCA'
+    'Authorization': 'Bearer <token>'
   }
 };
 

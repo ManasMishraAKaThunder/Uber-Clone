@@ -1,18 +1,12 @@
 const http = require('http');
 
-const data = JSON.stringify({
-  email: '<EMAIL>',
-  password: '<PASSWORD>'
-});
-
 const options = {
   hostname: 'localhost',
   port: 4000,
-  path: '/users/login',
-  method: 'POST',
+  path: '/users/logout',
+  method: 'GET',
   headers: {
-    'Content-Type': 'application/json',
-    'Content-Length': data.length
+    'Authorization': 'Bearer <token>'
   }
 };
 
@@ -27,5 +21,4 @@ req.on('error', error => {
   console.error(error);
 });
 
-req.write(data);
 req.end();

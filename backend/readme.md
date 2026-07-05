@@ -106,3 +106,64 @@ The request body should be in JSON format and include the following fields:
 
 - Status: 500 Internal Server Error
   - Returned if the server encounters an error while logging in and if there is any syntax error 
+
+## User Profile
+
+### Endpoint
+GET /user/profile
+
+### Description
+Returns the authenticated user's profile information.
+
+### HTTP METHOD
+`GET`
+
+### Authentication
+Requires a valid JWT token passed in the Authorization header as a Bearer token or in a cookie named `token`.
+
+### Success Response
+- Status: 200 OK
+- Response body:
+
+```json
+{
+  "_id": "user_id",
+  "fullName": {
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "email": "john@example.com"
+}
+```
+
+### Error Responses
+- Status: 401 Unauthorized
+  - Returned when no token is provided, the token is invalid, or the token has been blacklisted
+
+## User Logout
+
+### Endpoint
+GET /user/logout
+
+### Description
+Logs out the authenticated user by blacklisting the current token.
+
+### HTTP METHOD
+`GET`
+
+### Authentication
+Requires a valid JWT token passed in the Authorization header as a Bearer token or in a cookie named `token`.
+
+### Success Response
+- Status: 200 OK
+- Response body:
+
+```json
+{
+  "message": "logged out"
+}
+```
+
+### Error Responses
+- Status: 401 Unauthorized
+  - Returned when no token is provided or the token is invalid

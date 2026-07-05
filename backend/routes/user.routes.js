@@ -16,4 +16,6 @@ router.post('/login', [
     body('password').notEmpty().withMessage('Password is required'),
 ], usercontroller.loginUser);
 
+router.get('/profile', usercontroller.getUserProfile);
+
 module.exports = router;

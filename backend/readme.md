@@ -26,11 +26,15 @@ the request body should be in JSON format and include the following fields:
 }
 ```
 
-### Required Fields
-- fullName.firstName: required string, minimum 3 characters
-- fullName.lastName: required string, minimum 3 characters
-- email: required valid email address
-- password: required string, minimum 6 characters
+
+### EXAMPLE RESPOND 
+ - `user`(object).
+  - `fullname`(object).
+   - `firstname` (string):User's First name (minimum 3 characters).
+   - `lastname` (string): User's last name (minimum 3 characters).
+  - `email`(string): User's email address (must be a VALID email).
+  - `password` (string): User's password(minimum 6 characters). 
+ - `token`(string): JWT Token
 
 ### Success Response
 - Status: 201 Created
@@ -63,7 +67,7 @@ the request body should be in JSON format and include the following fields:
 POST /user/login
 
 ### Description
-Authenticates an existing user and returns a JWT token.
+Authenticates an existing user and returns a JWT token upon success
 
 ### HTTP METHOD
 `POST`
@@ -78,9 +82,10 @@ The request body should be in JSON format and include the following fields:
 }
 ```
 
-### Required Fields
-- email: required valid email address
-- password: required string
+### EXAMPLE RESPOND 
+  - `email`(string): User's email address (must be a VALID email).
+  - `password` (string): User's password(minimum 6 characters). 
+ - `token`(string): JWT Token
 
 ### Success Response
 - Status: 200 OK
@@ -100,4 +105,4 @@ The request body should be in JSON format and include the following fields:
   - Returned when the email or password is incorrect
 
 - Status: 500 Internal Server Error
-  - Returned if the server encounters an error while logging in
+  - Returned if the server encounters an error while logging in and if there is any syntax error 

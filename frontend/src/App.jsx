@@ -8,7 +8,7 @@ import Captainsignup from  '@/Pages/Captainsignup'
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-slate-900 text-white flex items-center justify-center">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user-login" element={<UserLogin />} />

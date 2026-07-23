@@ -1,5 +1,10 @@
-import React from 'react'   //used rafce for bolier plate 
-import { Route } from 'react-router-dom'
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from '@/Pages/Home'
+import UserLogin from '@/Pages/UserLogin'
+import UserSignup from '@/Pages/UserSignup'
+import Captainlogin from '@/Pages/Captainlogin'
+import Captainsignup from  '@/Pages/Captainsignup'
 
 const App = () => {
   return (
